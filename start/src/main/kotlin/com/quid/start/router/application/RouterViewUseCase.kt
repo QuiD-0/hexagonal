@@ -1,5 +1,6 @@
-package com.quid.start.router.usecase
+package com.quid.start.router.application
 
+import com.quid.start.router.application.port.RouterListOutPort
 import com.quid.start.router.domain.Router
 import java.util.function.Predicate
 

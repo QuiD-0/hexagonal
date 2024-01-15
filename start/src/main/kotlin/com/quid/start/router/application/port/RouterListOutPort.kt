@@ -1,4 +1,4 @@
-package com.quid.start.router.usecase
+package com.quid.start.router.application.port
 
 import com.quid.start.router.domain.Router
 
