@@ -1,12 +1,12 @@
-package com.quid.start.router
+package com.quid.start.router.adapter
 
 import com.quid.start.router.application.RouterViewUseCase
 import com.quid.start.router.application.RouterViewUseCase.RouterViewInputPort
 import com.quid.start.router.domain.Router
 import com.quid.start.router.domain.RouterType
 
-class RouterViewCLIAdaptor(
-    private val routerViewUseCase: RouterViewUseCase = RouterViewInputPort(RouterViewFileAdaptor())
+class RouterViewCLIAdapter(
+    private val routerViewUseCase: RouterViewUseCase = RouterViewInputPort(RouterViewFileAdapter())
 ) {
 
     fun obtainRelatedRouters(type: String): List<Router> =
