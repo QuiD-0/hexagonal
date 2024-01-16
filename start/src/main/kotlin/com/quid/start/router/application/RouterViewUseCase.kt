@@ -2,6 +2,7 @@ package com.quid.start.router.application
 
 import com.quid.start.router.application.port.RouterViewOutputPort
 import com.quid.start.router.domain.Router
+import com.quid.start.router.domain.RouterSearch
 import java.util.function.Predicate
 
 interface RouterViewUseCase {
@@ -12,6 +13,6 @@ interface RouterViewUseCase {
     ) : RouterViewUseCase {
         override fun getRouters(filter: Predicate<Router>): List<Router> =
             routerViewOutputPort.fetchRouters()
-                .let { Router.retrieveRouter(it, filter) }
+                .let { RouterSearch.retrieveRouter(it, filter) }
     }
 }
