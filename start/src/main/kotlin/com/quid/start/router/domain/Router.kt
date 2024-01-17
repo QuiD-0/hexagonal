@@ -8,8 +8,6 @@ data class Router(
     val id: RouterId = RouterId()
 ) {
     companion object {
-        fun retrieveRouter(routers: List<Router>, predicate: Predicate<Router>): List<Router> =
-            routers.filter { predicate.test(it) }
 
         fun filterByType(routerType: RouterType): Predicate<Router> {
             return if (routerType == RouterType.EDGE) {
