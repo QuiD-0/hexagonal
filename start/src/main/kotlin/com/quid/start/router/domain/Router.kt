@@ -5,7 +5,7 @@ import java.util.function.Predicate
 
 data class Router(
     val routerType: RouterType,
-    val id: UUID = UUID.randomUUID(),
+    val id: RouterId = RouterId()
 ) {
     companion object {
         fun retrieveRouter(routers: List<Router>, predicate: Predicate<Router>): List<Router> =
@@ -27,4 +27,6 @@ data class Router(
             return Predicate { it.routerType == RouterType.CORE }
         }
     }
+
+    data class RouterId(val id: UUID = UUID.randomUUID())
 }
