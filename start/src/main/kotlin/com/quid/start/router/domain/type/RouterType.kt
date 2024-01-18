@@ -1,4 +1,4 @@
-package com.quid.start.router.domain
+package com.quid.start.router.domain.type
 
 enum class RouterType {
     EDGE,

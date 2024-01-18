@@ -3,7 +3,7 @@ package com.quid.start.router.adapter
 import com.quid.start.router.application.RouterViewUseCase
 import com.quid.start.router.application.RouterViewUseCase.RouterViewInputPort
 import com.quid.start.router.domain.Router
-import com.quid.start.router.domain.RouterType
+import com.quid.start.router.domain.type.RouterType
 
 class RouterViewCLIAdapter(
     private val routerViewUseCase: RouterViewUseCase = RouterViewInputPort(RouterViewFileAdapter())

@@ -1,5 +1,7 @@
 package com.quid.start.router.domain
 
+import com.quid.start.router.domain.type.Protocol
+
 data class Ip(
     val address: String,
 ){
