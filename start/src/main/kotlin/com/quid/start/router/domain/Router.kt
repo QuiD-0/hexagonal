@@ -6,7 +6,8 @@ import java.util.function.Predicate
 
 data class Router(
     val routerType: RouterType,
-    val id: RouterId = RouterId()
+    val id: RouterId = RouterId(),
+    val networkSwitch: Switch? = null,
 ) {
     companion object {
 
@@ -26,6 +27,15 @@ data class Router(
             return Predicate { it.routerType == RouterType.CORE }
         }
     }
+
+    fun createNetwork(addr: Ip, name: String, cidr: Int): Network = Network(addr, name, cidr)
+
+    fun addNetwork(network: Network) {
+        networkSwitch?.addNetwork(network)
+            ?: throw IllegalStateException("Router is not connected to a switch")
+    }
+
+    fun retrieveNetwork(): List<Network> = networkSwitch?.networks ?: emptyList()
 
     data class RouterId(val id: UUID = UUID.randomUUID())
 }
