@@ -28,7 +28,12 @@ data class Router(
         }
     }
 
-    fun createNetwork(addr: Ip, name: String, cidr: Int): Network = Network(addr, name, cidr)
+    fun createNetwork(addr: Ip, name: String, cidr: Int): Network {
+        require(networkSwitch != null) { "Router is not connected to a switch" }
+        takeIf { networkSwitch.findNetwork(addr) }
+            ?.run { throw IllegalStateException("Network already exists") }
+            ?: return Network(addr, name, cidr)
+    }
 
     fun addNetwork(network: Network) {
         networkSwitch?.addNetwork(network)

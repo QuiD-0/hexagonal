@@ -6,6 +6,6 @@ data class Network(
     val cidr: Int
 ) {
     init{
-        require(cidr in 1..32) { "Invalid CIDR" }
+        require(cidr in 8..32) { "Invalid CIDR" }
     }
 }

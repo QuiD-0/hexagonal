@@ -14,6 +14,8 @@ data class Switch(
         return copy(networks = networks.plus(network))
     }
 
+    fun findNetwork(addr: Ip): Boolean = networks.any { it.address == addr }
+
     data class SwitchId(
         val value: UUID = UUID.randomUUID())
 }
