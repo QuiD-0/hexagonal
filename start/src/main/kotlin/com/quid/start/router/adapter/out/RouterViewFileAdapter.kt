@@ -1,6 +1,6 @@
-package com.quid.start.router.adapter
+package com.quid.start.router.adapter.out
 
-import com.quid.start.router.application.port.RouterViewOutputPort
+import com.quid.start.router.application.port.out.RouterViewOutputPort
 import com.quid.start.router.domain.Router
 import com.quid.start.router.domain.type.RouterType.CORE
 import com.quid.start.router.domain.type.RouterType.EDGE

@@ -1,7 +1,8 @@
-package com.quid.start.router.adapter
+package com.quid.start.router.adapter.`in`
 
-import com.quid.start.router.application.RouterViewUseCase
-import com.quid.start.router.application.RouterViewUseCase.RouterViewInputPort
+import com.quid.start.router.adapter.out.RouterViewFileAdapter
+import com.quid.start.router.application.usecase.RouterViewUseCase
+import com.quid.start.router.application.usecase.RouterViewUseCase.RouterViewInputPort
 import com.quid.start.router.domain.Router
 import com.quid.start.router.domain.type.RouterType
 
